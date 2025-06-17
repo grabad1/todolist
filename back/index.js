@@ -4,7 +4,10 @@ const connectDB = require('./mongo');         // konekcija sa bazom
 const Task = require('./models/task');         // model taska (ovo možeš koristiti kasnije u rutama)
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 connectDB().then(() => {
     app.use(express.json());
