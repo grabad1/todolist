@@ -10,7 +10,15 @@ const PORT = process.env.PORT || 3001;
 connectDB().then(() => {
     app.use(express.json());
     app.use(cors());
-
+    app.get('/test-db', async (req, res) => {
+        try {
+            // Probaj da pronađeš neki task (ili samo proveri konekciju)
+            await Task.findOne();
+            res.json({ status: 'OK', message: 'Povezan sa bazom i može da čita' });
+        } catch (err) {
+            res.status(500).json({ status: 'ERROR', message: 'Ne može da se poveže sa bazom', error: err.message });
+        }
+    });
     // Ovde idu tvoji API endpoint-i, na primer:
     app.get('/', (req, res) => {
         res.send('Server radi i povezan je sa bazom!');
