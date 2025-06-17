@@ -5,9 +5,6 @@ const Task = require('./models/task');         // model taska (ovo možeš koris
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
 
 connectDB().then(() => {
     app.use(express.json());
