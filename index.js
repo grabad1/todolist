@@ -104,7 +104,7 @@ async function startServer() {
         await connectDB();
         console.log('Povezan sa bazom.');
         app.listen(PORT, () => {
-            console.log(`Server je pokrenut na http://localhost:${PORT}`);
+            console.log(`Server je pokrenut na portu ${PORT}`);
         });
     } catch (error) {
         console.error('Neuspešno povezivanje sa bazom:', error);
