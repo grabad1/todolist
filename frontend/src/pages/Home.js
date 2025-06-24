@@ -17,7 +17,7 @@ function Home() {
     setFirstAttempt(false);
     navigate("/login");
   };
-  //promen
+  //promena
   useEffect(() => {
     axios.get(`${API_URL}/tasks`)
       .then(res => setTasks(res.data))
