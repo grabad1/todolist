@@ -64,7 +64,7 @@ function Home() {
 
   const patchTask = async (id) => {
     try {
-      const task = tasks.find(task => task._id == id)
+      const task = tasks.find(task => task._id === id)
       const response = await fetch(`${API_URL}/tasks/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
